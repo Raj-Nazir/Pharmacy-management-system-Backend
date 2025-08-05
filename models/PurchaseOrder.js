@@ -1,5 +1,8 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
+
+import { db1_pharmacy } from "../config/database.js";
+
 const purchaseOrderItemSchema = new Schema({
   medicine: {
     type: mongoose.Schema.Types.ObjectId,
@@ -33,7 +36,7 @@ const purchaseOrderSchema = new Schema(
   { timestamps: true }
 );
 
-export const PurchaseOrder = mongoose.model(
+export const PurchaseOrder = db1_pharmacy.model(
   "PurchaseOrder",
   purchaseOrderSchema
 );
