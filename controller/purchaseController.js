@@ -113,7 +113,7 @@ const updatePurchaseOrderStatus = asyncHandler(async (req, res) => {
 // @route   DELETE /api/purchases/:id
 // @access  Private
 const deletePurchaseOrder = asyncHandler(async (req, res) => {
-  const order = await PurchaseOrder.findById(req.params.id);
+  const order = await PurchaseOrder.findByIdAndDelete(req.params.id);
   if (!order) {
     res.status(404);
     throw new Error("Order not found");
@@ -122,7 +122,7 @@ const deletePurchaseOrder = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Cannot delete delivered or cancelled orders");
   }
-  await order.remove();
+
   res.json({ message: "Purchase order removed" });
 });
 
