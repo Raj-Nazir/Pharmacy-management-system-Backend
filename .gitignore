@@ -1,0 +1,25 @@
+*.log
+.DS_Store
+
+ # Node.js modules
+node_modules/
+
+# Environment variables
+.env
+
+
+
+
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test coverage reports
+coverage/
+
+# Uploaded files or temporary data
+uploads/
+tmp/
